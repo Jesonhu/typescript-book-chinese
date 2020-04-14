@@ -1,6 +1,6 @@
 # 深入理解 TypeScript
 
-此书是 [《TypeScript Deep Dive》](https://github.com/basarat/typescript-book/) 的中文 [jkchao](https://github.com/jkchao/typescript-book-chinese) 翻译版，感谢作者 [Basarat](https://github.com/basarat) 与 [jkchao](https://github.com/jkchao/typescript-book-chinese)的付出, 小厮只作为阅读的基础上并添加个人理解的笔记使用。
+此书是 [《TypeScript Deep Dive》](https://github.com/basarat/typescript-book/) 的中文 [jkchao](https://github.com/jkchao/typescript-book-chinese) 翻译版，感谢作者 [Basarat](https://github.com/basarat) 与 [jkchao](https://github.com/jkchao/typescript-book-chinese)的付出, 小厮只是阅读的基础上添加个人理解笔记并展示用。
 
 如果你喜欢纸质书籍，可以通过[京东](https://item.jd.com/12755624.html)或者[当当](http://product.m.dangdang.com/28487648.html?t=1574581821)，来购买此书。
 
@@ -8,7 +8,7 @@
 
 ## Why
 
-<img :src="$withBase('/typescript-downloads.jpg')" alt="ide"/>
+![](https://jkchao.github.io/typescript-book-chinese/typescript-downloads.jpg)
 
 > 数据来源：[npm 包下载量](https://npm-stat.com/charts.html?package=typescript&from=2016-01-01&to=2018-07-31)
 

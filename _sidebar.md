@@ -1,4 +1,4 @@
-+ [写在前面](docs/README.md)
++ [写在前面](README.md)
 
 + TypeScript 项目
   + [编译上下文](docs/project/compilationContext.md)

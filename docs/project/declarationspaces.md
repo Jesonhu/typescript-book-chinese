@@ -1,6 +1,6 @@
 # 声明空间
 
-在 TypeScript 里存在两种声明空间：类型声明空间与变量声明空间。下文将分别讨论这两个概念。
+在 TypeScript 里存在两种声明空间：`类型声明空间` 与 `变量声明空间`。下文将分别讨论这两个概念。
 
 ## 类型声明空间
 
@@ -53,3 +53,21 @@ let bar: foo; // ERROR: "cannot find name 'foo'"
 ```
 
 提示 `ERROR: "cannot find name 'foo'"` 原因是，名称 foo 没有定义在类型声明空间里。
+
+## 总结
+
+类型声明空间只能作为类型使用(即 `: XXX`); 而变量声明空间只作为赋值用, 具体的类型推导出现。
+而且两者是可以搭配使用的, 如下面的 `ddd` 的类型为 `Foo`
+
+```ts
+// 类型声明空间
+interface Foo { }
+const bbb: Foo = {}
+
+// 变量声明空间
+const aaa = 1;
+const ccc = aaa;
+
+// 混合使用
+const ddd = bbb;
+```

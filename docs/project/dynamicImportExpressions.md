@@ -57,9 +57,6 @@ import(/* webpackChunkName: "momentjs" */ 'moment')
 }
 ```
 
-:::danger 重要的提示
-
-- 使用 `"module": "esnext"` 选项：TypeScript 保留 `import()` 语句，该语句用于 Webpack Code Splitting。
+!> 重要的提示
+- 使用 `"module": "esnext"` 选项：TypeScript 保留 `import()` 语句，该语句用于 `Webpack Code Splitting` tsc 生成的 js。
 - 进一步了解有关信息，推荐阅读这篇文章：[Dynamic Import Expressions and webpack 2 Code Splitting integration with TypeScript 2.4.](https://blog.josequinto.com/2017/06/29/dynamic-import-expressions-and-webpack-code-splitting-integration-with-typescript-2-4/)
-
-:::

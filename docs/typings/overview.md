@@ -45,7 +45,7 @@ bool = 'false'; // Error
 
 ## 数组
 
-TypeScript 为数组提供了专用的类型语法，因此你可以很轻易的注解数组。它使用后缀 `[]`， 接着你可以根据需要补充任何有效的类型注解（如：`:boolean[]`）。它能让你安全的使用任何有关数组的操作，而且它也能防止一些类似于赋值错误类型给成员的行为。如下所示：
+TypeScript 为数组提供了专用的类型语法，因此你可以很轻易的注解数组。它使用后缀 `[]`， 接着你可以根据需要补充任何有效的类型注解（如：`:boolean[]`）或者是 `Array<boolean>`。它能让你安全的使用任何有关数组的操作，而且它也能防止一些类似于赋值错误类型给成员的行为。如下所示：
 
 ```ts
 let boolArray: boolean[];
@@ -60,6 +60,19 @@ boolArray = [false, false];
 boolArray[0] = 'false'; // Error
 boolArray = 'false'; // Error
 boolArray = [true, 'false']; // Error
+
+const arr1: Array<boolean> = [];
+
+arr1[0] = true;
+arr1[1] = false;
+
+// error:
+arr1[3] = 'false';
+
+arr1.push(true);
+
+// error:
+arr1.push('true');
 ```
 
 ## 接口
@@ -313,12 +326,10 @@ type Coordinates = [number, number];
 type Callback = (data: string) => void;
 ```
 
-:::tip
-
+?> 注意
 - 如果你需要使用类型注解的层次结构，请使用接口。它能使用 `implements` 和 `extends`
 - 为一个简单的对象类型（如上面例子中的 Coordinates）使用类型别名，只需要给它一个语义化的名字即可。另外，当你想给联合类型和交叉类型提供一个语义化的名称时，一个类型别名将会是一个好的选择。
 
-:::
 
 ## 最后
 

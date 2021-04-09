@@ -14,7 +14,7 @@ const foo = 123;
 const bar = foo; // allowed
 ```
 
-毋庸置疑，使用全局变量空间是危险的，因为它会与文件内的代码命名冲突。我们推荐使用下文中将要提到的文件模块。
+!> 毋庸置疑，使用全局变量空间是危险的，因为它会与文件内的代码命名冲突。我们推荐使用下文中将要提到的文件模块。
 
 ## 文件模块
 
@@ -62,9 +62,7 @@ const bar = foo; // allow
 
 这很酷，接下来，让我们看看 ES 模块语法。
 
-:::tip
-使用 `module: commonjs` 选项以及使用 ES 模块语法导入、导出、编写模块。
-:::
+?> 使用 `module: commonjs` 选项以及使用 ES 模块语法导入、导出、编写模块。
 
 ### ES 模块语法
 
@@ -172,9 +170,7 @@ import someLocalNameForThisFile from './foo';
 
 ### 模块路径
 
-:::tip
-如果你需要使用 `moduleResolution: node` 选项，你应该将此选项放入你的配置文件中。如果你使用了 `module: commonjs` 选项， `moduleResolution: node` 将会默认开启。
-:::
+?> 如果你需要使用 `moduleResolution: node` 选项，你应该将此选项放入你的配置文件中。如果你使用了 `module: commonjs` 选项， `moduleResolution: node` 将会默认开启。
 
 这里存在两种截然不同的模块：
 
@@ -183,9 +179,7 @@ import someLocalNameForThisFile from './foo';
 
 它们的主要区别在于系统如何解析模块。
 
-:::tip
-我将会使用一个概念性术语，`place` -- 将在提及查找模式后解释它。
-:::
+?> 我将会使用一个概念性术语，`place` -- 将在提及查找模式后解释它。
 
 #### 相对模块路径
 
@@ -370,9 +364,18 @@ const ensureImport: any = foo || bar || bas;
 
 然而，如果你的团队里有 TypeScript 初学者，你可以提供他们一个 `global.d.ts` 文件，用来将一些接口或者类型放入全局命名空间里，这些定义的接口和类型能在你的所有 TypeScript 代码里使用。
 
-:::tip
+?>
 对于任何需要编译成 JavaScript 代码，我们强烈建议你放入文件模块里。
-:::
 
 - `global.d.ts` 是一种扩充 `lib.d.ts` 很好的方式，如果你需要。
 - 当你从 `JS` 迁移到 `TS` 时，定义 `declare module "some-library-you-dont-care-to-get-defs-for"` 能让你快速开始。
+
+
+## 总结
+
+以上模块导入和导出方式并不是 TypeScript 特有的方式, 而是遵循其他模块系统定义规则，存在的模块系统:
+
++ AMD: 是 RequireJS 在推广过程中对模块定义的规范化产出，它是一个概念
++ CMD: 是 SeaJS 在推广过程中对模块定义的规范化产出，是一个同步模块定义
++ CommonJs: 是通过module.exports定义的，在前端浏览器里面并不支持 module.exports,通过node.js后端使用的
++ ES6: 官方模块化定义---export/import对模块进行导出导入的
